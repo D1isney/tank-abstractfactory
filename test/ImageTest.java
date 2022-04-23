@@ -26,6 +26,7 @@ class ImageTest {
 			BufferedImage image2 = ImageIO.read(ImageTest.class.getClassLoader().getResourceAsStream("images/enemy1D.gif"));
 			//                                   this.getclass().getClassLoader().getResourceAsStream("images/enemy1D.gif"));
 			assertNotNull(image2);
+			System.out.println();
 		} catch (IOException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
