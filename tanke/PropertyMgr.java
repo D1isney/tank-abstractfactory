@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyMgr {
+	//单例模式
 	static Properties props = new Properties();
 	
 	//要用语句块

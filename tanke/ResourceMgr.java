@@ -18,7 +18,7 @@ public class ResourceMgr {
 			
 			//搞四张图上来
 			//好的坦克
-			goodTankL = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/enemy1L.gif"));
+			goodTankL = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/enemy1L.gif")); 
 			goodTankU = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/enemy1U.gif"));
 			goodTankR = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/enemy1R.gif"));
 			goodTankD = ImageIO.read(ResourceMgr.class.getClassLoader().getResourceAsStream("images/enemy1D.gif"));
