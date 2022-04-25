@@ -10,7 +10,7 @@ import java.util.Random;
 //不然显得代码很繁琐
 //这个过程叫封装
 public class Tank {
-	private int x,y;
+	int x,y;
 	public int getX() {
 		return x;
 	}
@@ -27,17 +27,19 @@ public class Tank {
 		this.y = y;
 	}
 
-	private Dir dir = Dir.DOWN;
+	Dir dir = Dir.DOWN;
 	//正常需要使用final不可变的常量
 	//也可以使用private
 	
 	//坦克初始的速度
 	private static final int SPEED = Integer.parseInt((String)PropertyMgr.get("tankSpeed"));;
 	
+	FireStrategy fs;
+	
 	
 	private boolean living = true; 
 	
-	private Group group = Group.BAD;
+	Group group = Group.BAD;
 	
 	public static int WIDTH = ResourceMgr.goodTankD.getWidth();
 	public static int HEIGHT = ResourceMgr.goodTankD.getHeight();
@@ -49,9 +51,7 @@ public class Tank {
 	private Random random = new Random();
 	
 	
-	private TankFrame tf = null;
-	
-	
+	TankFrame tf = null;
 	
 	
 	//用于提醒坦克什么时候改动什么时候不该动
@@ -79,6 +79,24 @@ public class Tank {
 		rect.y = this.y;
 		rect.width = WIDTH;
 		rect.height = HEIGHT;
+		
+		//判断是否自己的坦克所使用的策略模式
+		if(group == Group.GOOD) {
+			String goodFSName = (String)PropertyMgr.get("goodFS");
+			//把这个名字代表的类load到内存
+			try {
+				fs = (FireStrategy)Class.forName(goodFSName).newInstance();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			fs = new DefaultFireStrategy();
+		}
 	}
 
 
@@ -189,11 +207,20 @@ public class Tank {
 	//每按一次 Ctrl发射一次子弹
 	//把子弹传到坦克类上，在坦克点上发出
 	public void file() {
+		//应该做成参数穿进去
+		//把FireStrategy做成单例模式
+		//不然的话就会new很多对象对来浪费资源
+		
+//		用成员变量比较简单
+		fs.file(this);
 		
 		//修改子弹出现的位置，计算测量修改
-		int bx = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
-		int by = this.y + Tank.HEIGHT/2 - Bullet.WIDTH/2;
-		tf.bullets.add(new Bullet(bx,by,this.dir,this.group,this.tf));
+//		int bx = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
+//		int by = this.y + Tank.HEIGHT/2 - Bullet.WIDTH/2;
+//		tf.bullets.add(new Bullet(bx,by,this.dir,this.group,this.tf));
+		
+		//指定用什么策略
+		
 	}
 	
 	

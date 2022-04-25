@@ -37,6 +37,10 @@ public class Bullet {
 		rect.y = this.y;
 		rect.width = WIDTH;
 		rect.height = HEIGHT;
+		
+		//new出来直接加到bullets队列里面去
+		tf.bullets.add(this);
+		
 	}
 	public Group getGroup() {
 		return group;
