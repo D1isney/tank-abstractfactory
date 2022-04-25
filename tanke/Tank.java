@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.geom.Rectangle2D;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 //创建一个坦克类，需要的时候直接new出来
@@ -85,17 +86,30 @@ public class Tank {
 			String goodFSName = (String)PropertyMgr.get("goodFS");
 			//把这个名字代表的类load到内存
 			try {
-				fs = (FireStrategy)Class.forName(goodFSName).newInstance();
-			} catch (InstantiationException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
+//				JDK1.8以前可以使用
+//				fs = (FireStrategy)Class.forName(goodFSName).newInstance();
+				fs = (FireStrategy)Class.forName(goodFSName).getDeclaredConstructor().newInstance();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		else {
-			fs = new DefaultFireStrategy();
+			//拉姆达表达式 当DefaultFireStategy只有一个方法的时候
+			fs = (t) ->{
+				int bx = t.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
+				int by = t.y + Tank.HEIGHT/2 - Bullet.WIDTH/2;
+				new Bullet(bx,by,t.dir,t.group,t.tf);
+			};
+			
+//			String badFSName = (String)PropertyMgr.get("badFS");
+//			//把这个名字代表的类load到内存
+//			try {
+//				JDK1.8以前可以使用
+//				fs = (FireStrategy)Class.forName(goodFSName).newInstance();
+//				fs = (FireStrategy)Class.forName(badFSName).getDeclaredConstructor().newInstance();
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 		}
 	}
 
