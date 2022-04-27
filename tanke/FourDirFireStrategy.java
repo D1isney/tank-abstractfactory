@@ -14,7 +14,8 @@ public class FourDirFireStrategy implements FireStrategy {
 		//遍历子弹 所有方向都打一颗
 		Dir []dirs = Dir.values();
 		for(Dir dir : dirs) {
-			new Bullet(bx,by,dir,t.group,t.tf);
+//			new Bullet(bx,by,dir,t.group,t.tf);
+			t.tf.gf.createBullet(bx, by, dir, t.group, t.tf);
 		}
 		
 	}

@@ -9,6 +9,13 @@ import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import tanke.abstractfactory.BaseBullet;
+import tanke.abstractfactory.BaseExplode;
+import tanke.abstractfactory.BaseTank;
+import tanke.abstractfactory.DefaultFactory;
+import tanke.abstractfactory.GameFactory;
+import tanke.abstractfactory.RectFactory;
 public class TankFrame extends Frame{
 	
 //             此处代码使用封装
@@ -24,18 +31,22 @@ public class TankFrame extends Frame{
 	Tank myTank = new Tank(200,400,Dir.DOWN,Group.GOOD,this);
 
 	//子弹装进列表
-	List<Bullet>bullets = new ArrayList<>();
+	public List<BaseBullet>bullets = new ArrayList<>();
 	
 	//坦克图片装进列表
-	List<Tank>tanks = new ArrayList<>();
+	public List<Tank>tanks = new ArrayList<>();
 
 	//将爆炸的图片全都存进列表
-	List<Explode>explode = new ArrayList<>();
+	public List<BaseExplode>explode = new ArrayList<>();
+	
+	//初始化工厂
+	public GameFactory gf = new RectFactory();
+	
 	
 	//用配置文件定义画面的大小
 	//方便后期修改大小
-	static final int GAME_WIDTH = Integer.parseInt((String)PropertyMgr.get("gameWidth"));
-	static final int GAME_HEIGHT = Integer.parseInt((String)PropertyMgr.get("gameHeight"));
+	public static final int GAME_WIDTH = Integer.parseInt((String)PropertyMgr.get("gameWidth"));
+	public static final int GAME_HEIGHT = Integer.parseInt((String)PropertyMgr.get("gameHeight"));
 	
 	public TankFrame() {
 		this.setSize(GAME_WIDTH,GAME_HEIGHT); // 窗口大小

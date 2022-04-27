@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Explode {
+import tanke.abstractfactory.BaseExplode;
+
+public class Explode extends BaseExplode {
 	//方向位置
 	private int x,y;
 	//炮弹大小
@@ -25,7 +27,7 @@ public class Explode {
 	
 	
 	
-	
+	@Override
 	public void paint(Graphics g) {
 		//首先画数组里的第一张图
 		g.drawImage(ResourceMgr.explodes[step++],x,y,null);
@@ -34,20 +36,6 @@ public class Explode {
 		if(step >= ResourceMgr.explodes.length)
 			tf.explode.remove(this);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 }

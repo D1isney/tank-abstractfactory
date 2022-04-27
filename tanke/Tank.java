@@ -7,10 +7,12 @@ import java.awt.geom.Rectangle2D;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
+import tanke.abstractfactory.BaseTank;
+
 //创建一个坦克类，需要的时候直接new出来
 //不然显得代码很繁琐
 //这个过程叫封装
-public class Tank {
+public class Tank extends BaseTank{
 	int x,y;
 	public int getX() {
 		return x;
@@ -46,7 +48,7 @@ public class Tank {
 	public static int HEIGHT = ResourceMgr.goodTankD.getHeight();
 	
 	//用于记录子弹的数量
-	Rectangle rect = new Rectangle();
+	public Rectangle rect = new Rectangle();
 	
 	//生成一个随机数
 	private Random random = new Random();

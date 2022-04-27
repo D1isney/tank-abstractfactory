@@ -1,13 +1,20 @@
-package tanke;
+package tanke.abstractfactory;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
+import tanke.Dir;
+import tanke.Explode;
+import tanke.Group;
+import tanke.PropertyMgr;
+import tanke.ResourceMgr;
+import tanke.Tank;
+import tanke.TankFrame;
 import tanke.abstractfactory.BaseBullet;
 import tanke.abstractfactory.GameFactory;
 
-public class Bullet extends BaseBullet {
+public class RectBullet extends BaseBullet {
 	//子弹速度
 	private static final int SPEED = Integer.parseInt((String)PropertyMgr.get("bulletSpeed"));;
 	//方向位置
@@ -28,7 +35,7 @@ public class Bullet extends BaseBullet {
 	//用来判断子弹是好的还是坏的
 	private Group group = Group.BAD;
 	
-	public Bullet(int x,int y,Dir dir,Group group,TankFrame tf) {
+	public RectBullet(int x,int y,Dir dir,Group group,TankFrame tf) {
 		this.x = x;
 		this.y = y;
 		this.dir = dir;
@@ -55,22 +62,10 @@ public class Bullet extends BaseBullet {
 		if(!living) {
 			tf.bullets.remove(this);
 		}
-		
-		
-		
-//		//获取画笔本来的颜色
-//		Color c = g.getColor();
-//		//将画笔的颜色改为红色
-//		g.setColor(Color.RED);
-//		//设定子弹的大小
-//		g.fillOval(x, y, WIDTH, HEIGHT); 	//矩形的内切圆
-//		//把子弹变为红色
-//		g.setColor(c);
-		
-		//如果子弹每个方向的图片不一样，则需要去枚举子弹方向
-		//然后可以参考坦克用switch去判断方向
-		g.drawImage(ResourceMgr.bullet,x,y,null);
-
+		Color c = g.getColor();
+		g.setColor(Color.YELLOW);
+		g.fillRect(x, y, 15, 15);
+		g.setColor(c);
 		move();
 	}
 	
