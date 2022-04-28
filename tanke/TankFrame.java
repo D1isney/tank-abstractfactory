@@ -34,13 +34,13 @@ public class TankFrame extends Frame{
 	public List<BaseBullet>bullets = new ArrayList<>();
 	
 	//坦克图片装进列表
-	public List<BaseTank>tanks = new ArrayList<>();
+	public List<Tank>tanks = new ArrayList<>();
 
 	//将爆炸的图片全都存进列表
 	public List<BaseExplode>explode = new ArrayList<>();
 	
 	//初始化工厂
-	GameFactory gf = new RectFactory();
+	public GameFactory gf = new RectFactory();
 	
 	
 	//用配置文件定义画面的大小
