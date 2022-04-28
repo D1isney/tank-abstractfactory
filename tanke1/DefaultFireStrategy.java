@@ -1,4 +1,4 @@
-package tanke;
+package tanke1;
 
 /**
   *默认的开火策略 

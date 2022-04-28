@@ -1,4 +1,4 @@
-package tanke;
+package tanke1;
 
 import tanke.abstractfactory.GameFactory;
 

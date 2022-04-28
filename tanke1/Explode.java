@@ -1,4 +1,4 @@
-package tanke;
+package tanke1;
 
 import java.awt.Color;
 import java.awt.Graphics;

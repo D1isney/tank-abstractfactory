@@ -8,15 +8,15 @@ import java.awt.geom.Rectangle2D;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
-import tanke.Bullet;
-import tanke.DefaultFireStrategy;
-import tanke.Dir;
-import tanke.FireStrategy;
-import tanke.Group;
-import tanke.PropertyMgr;
-import tanke.ResourceMgr;
-import tanke.TankFrame;
 import tanke.abstractfactory.BaseTank;
+import tanke1.Bullet;
+import tanke1.DefaultFireStrategy;
+import tanke1.Dir;
+import tanke1.FireStrategy;
+import tanke1.Group;
+import tanke1.PropertyMgr;
+import tanke1.ResourceMgr;
+import tanke1.TankFrame;
 
 public class RectTank extends BaseTank{
 	int x,y;

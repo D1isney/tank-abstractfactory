@@ -4,15 +4,15 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import tanke.Dir;
-import tanke.Explode;
-import tanke.Group;
-import tanke.PropertyMgr;
-import tanke.ResourceMgr;
-import tanke.Tank;
-import tanke.TankFrame;
 import tanke.abstractfactory.BaseBullet;
 import tanke.abstractfactory.GameFactory;
+import tanke1.Dir;
+import tanke1.Explode;
+import tanke1.Group;
+import tanke1.PropertyMgr;
+import tanke1.ResourceMgr;
+import tanke1.Tank;
+import tanke1.TankFrame;
 
 public class RectBullet extends BaseBullet {
 	private static final int SPEED = Integer.parseInt((String)PropertyMgr.get("bulletSpeed"));;

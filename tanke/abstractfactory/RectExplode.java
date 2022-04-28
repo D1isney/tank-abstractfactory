@@ -3,8 +3,8 @@ package tanke.abstractfactory;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import tanke.ResourceMgr;
-import tanke.TankFrame;
+import tanke1.ResourceMgr;
+import tanke1.TankFrame;
 
 //方的爆炸
 public class RectExplode extends BaseExplode {

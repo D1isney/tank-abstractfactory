@@ -1,4 +1,4 @@
-package tanke;
+package tanke1;
 /**
  *定义一个策略
  */

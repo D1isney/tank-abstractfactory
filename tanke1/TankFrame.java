@@ -1,4 +1,4 @@
-package tanke;
+package tanke1;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -40,7 +40,8 @@ public class TankFrame extends Frame{
 	public List<BaseExplode>explode = new ArrayList<>();
 	
 	//初始化工厂
-	public GameFactory gf = new RectFactory();
+	//坦克样式修改工厂就可
+	public GameFactory gf = new DefaultFactory();
 	
 	
 	//用配置文件定义画面的大小

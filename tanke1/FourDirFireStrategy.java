@@ -1,4 +1,4 @@
-package tanke;
+package tanke1;
 /**
  *新的策略
  *子弹向四个方向发射 

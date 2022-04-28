@@ -1,8 +1,8 @@
 package tanke.abstractfactory;
 
-import tanke.Dir;
-import tanke.Group;
-import tanke.TankFrame;
+import tanke1.Dir;
+import tanke1.Group;
+import tanke1.TankFrame;
 
 public abstract class GameFactory {
 	public abstract BaseTank createTank(int x,int y,Dir dir,Group group,TankFrame tf);

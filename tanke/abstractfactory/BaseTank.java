@@ -3,7 +3,7 @@ package tanke.abstractfactory;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import tanke.Group;
+import tanke1.Group;
 
 public abstract class BaseTank {
 	public Group group = Group.BAD;
