@@ -87,7 +87,7 @@ public class RectBullet extends BaseBullet {
 			living = false;
 		}
 	}
-	public void collideWith(Tank tank) {
+	public void collideWith(BaseTank tank) {
 		
 		if(this.group == tank.getGroup()) return;
 		

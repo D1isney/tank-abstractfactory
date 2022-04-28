@@ -34,7 +34,7 @@ public class TankFrame extends Frame{
 	public List<BaseBullet>bullets = new ArrayList<>();
 	
 	//坦克图片装进列表
-	public List<Tank>tanks = new ArrayList<>();
+	public List<BaseTank>tanks = new ArrayList<>();
 
 	//将爆炸的图片全都存进列表
 	public List<BaseExplode>explode = new ArrayList<>();

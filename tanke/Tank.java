@@ -8,6 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 import tanke.abstractfactory.BaseTank;
+import tanke.abstractfactory.RectTank;
 
 //创建一个坦克类，需要的时候直接new出来
 //不然显得代码很繁琐
@@ -42,13 +43,13 @@ public class Tank extends BaseTank{
 	
 	private boolean living = true; 
 	
-	Group group = Group.BAD;
+//	Group group = Group.BAD;
 	
 	public static int WIDTH = ResourceMgr.goodTankD.getWidth();
 	public static int HEIGHT = ResourceMgr.goodTankD.getHeight();
 	
 	//用于记录子弹的数量
-	public Rectangle rect = new Rectangle();
+//	public Rectangle rect = new Rectangle();
 	
 	//生成一个随机数
 	private Random random = new Random();
@@ -96,12 +97,14 @@ public class Tank extends BaseTank{
 			}
 		}
 		else {
+			fs = new DefaultFireStrategy();
+			
 			//拉姆达表达式 当DefaultFireStategy只有一个方法的时候
-			fs = (t) ->{
-				int bx = t.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
-				int by = t.y + Tank.HEIGHT/2 - Bullet.WIDTH/2;
-				new Bullet(bx,by,t.dir,t.group,t.tf);
-			};
+//			fs = (t) ->{
+//				int bx = t.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
+//				int by = t.y + Tank.HEIGHT/2 - Bullet.WIDTH/2;
+//				new Bullet(bx,by,t.dir,t.group,t.tf);
+//			};
 			
 //			String badFSName = (String)PropertyMgr.get("badFS");
 //			//把这个名字代表的类load到内存
@@ -228,7 +231,16 @@ public class Tank extends BaseTank{
 		//不然的话就会new很多对象对来浪费资源
 		
 //		用成员变量比较简单
-		fs.file(this);
+//		fs.file(this);
+		
+		
+		int bx = this.x + RectTank.WIDTH/2 - Bullet.WIDTH/2;
+		int by = this.y + RectTank.HEIGHT/2 - Bullet.WIDTH/2;
+		
+		Dir []dirs = Dir.values();
+		for(Dir dir : dirs) {
+			tf.gf.createBullet(bx, by, dir, group, tf);
+		}
 		
 		//修改子弹出现的位置，计算测量修改
 //		int bx = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
