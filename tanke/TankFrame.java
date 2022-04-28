@@ -34,13 +34,13 @@ public class TankFrame extends Frame{
 	public List<BaseBullet>bullets = new ArrayList<>();
 	
 	//坦克图片装进列表
-	public List<Tank>tanks = new ArrayList<>();
+	public List<BaseTank>tanks = new ArrayList<>();
 
 	//将爆炸的图片全都存进列表
 	public List<BaseExplode>explode = new ArrayList<>();
 	
 	//初始化工厂
-	public GameFactory gf = new RectFactory();
+	GameFactory gf = new RectFactory();
 	
 	
 	//用配置文件定义画面的大小
@@ -146,10 +146,9 @@ public class TankFrame extends Frame{
 			//collision detect
 			for(int i =0;i<bullets.size();i++) {
 				for(int j = 0;j<tanks.size();j++) {
-					bullets.get(i).collideWith(tanks.get(j));				}
+					bullets.get(i).collideWith(tanks.get(j));		
+					}
 			}
-			
-			
 		}
 		
 		//KeyAdapter监听

@@ -62,11 +62,13 @@ public class RectBullet extends BaseBullet {
 		if(!living) {
 			tf.bullets.remove(this);
 		}
+		
 		Color c = g.getColor();
 		g.setColor(Color.YELLOW);
 		g.fillRect(x, y, 15, 15);
 		g.setColor(c);
 		move();
+
 	}
 	
 	//子弹移动的判断
@@ -122,4 +124,6 @@ public class RectBullet extends BaseBullet {
 		this.living = false;
 		
 	}
+
+
 }

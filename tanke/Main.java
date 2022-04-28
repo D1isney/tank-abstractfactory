@@ -1,5 +1,7 @@
 package tanke;
 
+import tanke.abstractfactory.GameFactory;
+
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {

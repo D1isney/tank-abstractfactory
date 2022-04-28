@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 import tanke.abstractfactory.BaseBullet;
+import tanke.abstractfactory.BaseTank;
 import tanke.abstractfactory.GameFactory;
 
 public class Bullet extends BaseBullet {
@@ -17,9 +18,7 @@ public class Bullet extends BaseBullet {
 	public static int WIDTH = ResourceMgr.bullet.getWidth();
 	public static int HEIGHT = ResourceMgr.bullet.getHeight();
 	
-	Rectangle rect = new Rectangle();
-	
-	
+	public Rectangle rect = new Rectangle();
 	
 	//判断子弹是否飞出去
 	private boolean living = true;
