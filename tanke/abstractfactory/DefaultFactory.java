@@ -1,11 +1,11 @@
 package tanke.abstractfactory;
 
-import tanke1.Bullet;
-import tanke1.Dir;
-import tanke1.Explode;
-import tanke1.Group;
-import tanke1.Tank;
-import tanke1.TankFrame;
+import tanke.Bullet;
+import tanke.Dir;
+import tanke.Explode;
+import tanke.Group;
+import tanke.Tank;
+import tanke.TankFrame;
 
 public class DefaultFactory extends GameFactory{
 

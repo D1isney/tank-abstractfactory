@@ -2,7 +2,7 @@ package tanke.abstractfactory;
 
 import java.awt.Graphics;
 
-import tanke1.Tank;
+import tanke.Tank;
 
 public abstract class BaseBullet {
 

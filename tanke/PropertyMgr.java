@@ -1,4 +1,4 @@
-package tanke1;
+package tanke;
 
 import java.io.IOException;
 import java.util.Properties;

@@ -1,4 +1,4 @@
-package tanke1;
+package tanke;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

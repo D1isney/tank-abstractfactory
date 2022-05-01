@@ -1,4 +1,4 @@
-package tanke1;
+package tanke;
 
 public enum Group {
 	GOOD,BAD

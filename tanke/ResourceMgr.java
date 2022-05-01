@@ -1,4 +1,4 @@
-package tanke1;
+package tanke;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;

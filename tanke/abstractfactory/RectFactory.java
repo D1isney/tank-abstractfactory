@@ -1,9 +1,9 @@
 package tanke.abstractfactory;
 
-import tanke1.Bullet;
-import tanke1.Dir;
-import tanke1.Group;
-import tanke1.TankFrame;
+import tanke.Bullet;
+import tanke.Dir;
+import tanke.Group;
+import tanke.TankFrame;
 
 //方爆炸的工厂
 public class RectFactory extends GameFactory {
